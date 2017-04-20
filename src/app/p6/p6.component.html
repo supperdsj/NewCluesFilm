@@ -1,0 +1,33 @@
+<div class="dotBG">
+    <div class="river {{sel>=0&&sel<3?'s1':''}} {{sel>=3?'s2':''}}">
+        <div class="b1">
+            <div *ngFor="let film of films;let i = index;" class="content  {{i==sel?'sc':''}}">
+                <div class="img">
+                    <img src="{{film.img}}" class="it">
+                </div>
+                <div class="section">
+                    <div class="h1">
+                        《{{film.title}}》
+                        <div class="small">{{film.subTitle}}</div>
+                    </div>
+                    <div class="h2" *ngFor="let text of film.texts">{{text}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="b2">
+            <div *ngFor="let film of films;let i = index;" class="content  {{i==sel?'sc':''}}">
+                <div class="img">
+                    <img src="{{film.img}}" class="it">
+                </div>
+                <div class="section">
+                    <div class="h1">
+                        《{{film.title}}》
+                        <div class="small">{{film.subTitle}}</div>
+                    </div>
+                    <div class="h2" *ngFor="let text of film.texts">{{text}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clickArea" (click)="bindViewTap()"></div>

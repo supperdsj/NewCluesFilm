@@ -21,11 +21,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-var options = process.env.NG_ENV == 'pro' ? {maxAge: '3d'} : {maxAge: '1m'};
+var options = process.env.NG_ENV == 'pro' ? {maxAge: '3d'} : {maxAge: '1h'};
 app.use(express.static(path.join(__dirname, 'public'), options));
-
-app.use('/', index);
-app.use('/users', users);
+app.use("/**", function (req, res) {
+    res.sendfile("public/index.html");
+});
+//app.use('/', index);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

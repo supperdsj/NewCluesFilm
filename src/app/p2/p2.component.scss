@@ -1,0 +1,161 @@
+@import "../remSize";
+
+.cat {
+  width: remSize(370);
+  margin: remSize(190);
+  height: remSize(400);
+  position: relative;
+}
+
+.catGroup {
+  position: absolute;
+  width: remSize(320);
+  height: remSize(400);
+  right: remSize(80);
+  top: 0;
+  overflow: hidden;
+}
+
+.iCat {
+  width: remSize(320);
+  height: remSize(370);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.iHole {
+  width: remSize(162);
+  height: remSize(245);
+  position: absolute;
+  //right: 0;
+  left: remSize(370-162);
+  bottom: 0;
+  transform: scale(0);
+}
+
+.catInHole {
+  animation: ih 0.3s;
+  animation-fill-mode: both;
+}
+
+.iGlass {
+  width: remSize(54);
+  height: remSize(91);
+  position: absolute;
+  left: remSize(370-54)-0.9rem;
+  right: 0.9rem;
+  bottom: 0.87rem;
+  transform-origin: left bottom;
+  animation: gl 0.5s 1s;
+  animation-fill-mode: both;
+}
+
+.ho {
+  animation: holeA 0.5s;
+  animation-fill-mode: both;
+}
+
+.ce {
+  background-color: #1A4093;
+  width: 0.8rem;
+  height: 0.8rem;
+  position: absolute;
+  transform: rotate(60deg);
+  animation: e 6s 2s infinite;
+  animation-fill-mode: both;
+}
+
+p {
+  color: #717071;
+  text-align: center;
+  margin: 0;
+}
+
+.h1 {
+  font-weight: bolder;
+  font-size: remSize(30);
+  animation: fl 1.5s;
+  position: relative;
+}
+
+.h2 {
+  font-weight: normal;
+  font-size: remSize(28);
+  margin-bottom: remSize(10);
+  animation: fr 1.5s;
+  position: relative;
+}
+
+@keyframes fl {
+  from {
+    opacity: 0;
+    left: remSize(-150);
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fr {
+  from {
+    opacity: 0;
+    left: remSize(150);
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes gl {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(-60deg);
+  }
+}
+
+$p1: 2.1rem;
+$p2: 2.7rem;
+@keyframes e {
+  0% {
+    right: $p1;
+    bottom: $p2;
+  }
+  5% {
+    right: $p1 + 0.4rem;
+    bottom: $p2 - 0.5rem;
+  }
+  10% {
+    right: $p1;
+    bottom: $p2;
+  }
+  100% {
+    right: $p1;
+    bottom: $p2;
+  }
+}
+
+@keyframes holeA {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+
+}
+
+@keyframes ih {
+  from {
+    opacity: 1;
+    width: remSize(320);
+  }
+  to {
+    width: 0;
+    opacity: 0;
+  }
+}

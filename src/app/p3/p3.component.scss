@@ -1,0 +1,122 @@
+@import "../remSize";
+
+.title {
+  text-align: center;
+  color: #111111;
+  background-color: white;
+  border: 2px solid #A9A9A9;
+  margin: 0 auto;
+  margin-top: remSize(170);
+  padding: remSize(30) 0;
+  width: remSize(630);
+  animation-duration: 0.5s;
+}
+
+.title div {
+  margin: remSize(40) 0;
+  font-size: 0;
+}
+
+.h1 {
+  font-weight: bolder;
+  font-size: remSize(30);
+  line-height: remSize(30);
+}
+
+.h2 {
+  font-size: remSize(25);
+  line-height: remSize(25);
+  font-weight: normal;
+}
+
+.h2:before {
+  content: '• '
+}
+
+.h2:after {
+  content: ' •'
+}
+
+.an {
+  margin-top: remSize(180);
+  width: remSize(750);
+  position: relative;
+  height: remSize(500);
+  overflow: hidden;
+}
+
+.hole {
+  position: absolute;
+  left: remSize(90);
+  top: remSize(20);
+  width: remSize(170);
+  height: remSize(250);
+}
+
+.cat {
+  position: absolute;
+  left: remSize(160);
+  top: 0;
+  width: 0;
+  height: remSize(268);
+  font-size: 0;
+  overflow: hidden;
+  animation-fill-mode: both;
+  img {
+    width: remSize(431);
+    height: remSize(268);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.ball {
+  position: absolute;
+  left: remSize(540);
+  top: remSize(230);
+  width: remSize(72);
+  height: remSize(72);
+}
+
+@keyframes holeA {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.ho {
+  animation: holeA 0.5s;
+  animation-fill-mode: both;
+}
+.catOutHole {
+  animation: ih 0.2s;
+  animation-fill-mode: both;
+}
+.roll{
+  animation: br 0.5s;
+  animation-fill-mode: both;
+}
+@keyframes ih {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    width: remSize(431);
+  }
+}
+@keyframes br {
+  from {
+    left: remSize(540);
+    transform: rotate(0deg);
+  }
+  to {
+    left: remSize(790);
+    transform: rotate(720deg);
+  }
+}

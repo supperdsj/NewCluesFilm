@@ -1,0 +1,101 @@
+@import "../remSize";
+
+.river {
+  width: remSize(2250);
+  height: 100%;
+  background-image: url("/assets/image/p6_river.png");
+  background-size: remSize(2250) remSize(706);
+  background-repeat: no-repeat;
+  background-position: left center;
+  position: relative;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.it {
+  width: remSize(542);
+  height: remSize(760);
+}
+
+.img {
+  border: 3px solid #303030;
+  margin: 0 auto;
+  padding: remSize(25);
+  background-color: #fff;
+  font-size: 0;
+  width: remSize(542);
+  height: remSize(760);
+  position: absolute;
+}
+
+.section {
+  border: 3px solid #303030;
+  margin: 0 auto;
+  padding: remSize(25);
+  width: remSize(542);
+  position: absolute;
+  background-color: #fff;
+}
+
+.b1 .img {
+  top: remSize(40);
+  left: remSize(820);
+}
+
+.b1 .section {
+  left: remSize(820);
+  bottom: remSize(40);
+}
+
+.b2 .img {
+  left: remSize(1570);
+  bottom: remSize(40);
+}
+
+.b2 .section {
+  left: remSize(1570);
+  top: remSize(40);
+}
+
+.h1 {
+  font-size: remSize(35);
+  text-align: left;
+  margin-bottom: remSize(20);
+}
+
+.h1 .small {
+  font-size: remSize(30);
+  display: inline;
+}
+
+.h2 {
+  font-size: remSize(25);
+  text-align: left;
+  padding: 0;
+}
+
+.h2:before {
+  content: '• '
+}
+
+.s1 {
+  left: remSize(-750);
+}
+
+.s2 {
+  left: remSize(-1500);
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.sc {
+  opacity: 1;
+}

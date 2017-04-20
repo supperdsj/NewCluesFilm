@@ -1,0 +1,16 @@
+<div class="dotBG">
+</div>
+<div class="bg">
+    <img src="/assets/image/p5_l2.png" class="l2">
+    <div class="block">
+        <div *ngFor="let film of films;let i = index;" class="content  {{i==sel?'sc':''}}">
+            <img src="{{film.img}}" class="it">
+            <div class="section">
+                <div class="h1">{{film.title}}</div>
+                <div class="h2" *ngFor="let text of film.texts">{{text}}</div>
+            </div>
+        </div>
+    </div>
+    <img src="/assets/image/p5_l1.png" class="l1">
+</div>
+<div class="clickArea" (click)="bindViewTap()"></div>

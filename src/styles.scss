@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/remSize";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  width: 16rem;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.clickArea {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.dotBG {
+  width: 100%;
+  //width: 16rem;
+  overflow: hidden;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: url('assets/image/bg_dot.png');
+  background-size: remSize(40) remSize(18);
+  background-repeat: repeat;
+  z-index: -1;
+}

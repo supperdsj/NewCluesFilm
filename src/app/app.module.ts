@@ -5,10 +5,22 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {ROOT_ROUTING} from "./app.routing";
+import { P1Component } from './p1/p1.component';
+import { P2Component } from './p2/p2.component';
+import { P3Component } from './p3/p3.component';
+import { P4Component } from './p4/p4.component';
+import { P5Component } from './p5/p5.component';
+import { P6Component } from './p6/p6.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        P1Component,
+        P2Component,
+        P3Component,
+        P4Component,
+        P5Component,
+        P6Component
     ],
     imports: [
         ROOT_ROUTING,

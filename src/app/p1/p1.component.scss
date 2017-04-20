@@ -1,0 +1,79 @@
+@import "../remSize";
+
+.cImage {
+  font-size: 0;
+  width: remSize(480);
+  height: remSize(220);
+}
+
+.cGroup {
+  font-size: 0;
+  margin-left: remSize(140);
+  margin-top: remSize(250);
+  height: remSize(220);
+  position: relative;
+}
+
+.sImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: remSize(480);
+  height: remSize(220);
+}
+
+.cpGroup {
+  margin-left: remSize(140);
+  margin-top: remSize(-5);
+  transform: scaleY(-1);
+  height: remSize(220);
+  position: relative;
+  opacity: 0.5;
+}
+
+.titles {
+  font-size: remSize(22);
+  color: #211816;
+  width: remSize(250);
+  position: absolute;
+  height: 0;
+  right: remSize(140);
+  bottom: remSize(45);
+}
+
+.titles .b {
+  font-size: remSize(30);
+  color: #2A519B;
+  text-align: center;
+  animation: fu 2s;
+  position: relative;
+}
+
+.titles .f {
+  animation: fd 2s;
+  position: relative;
+}
+
+@keyframes fu {
+  from {
+    opacity: 0;
+    top: remSize(-15);
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes fd {
+  from {
+    opacity: 0;
+    top: remSize(15);
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
