@@ -1,24 +1,41 @@
 @import "../remSize";
-.cat{
-  width:remSize(300);
+
+.cat {
+  width: remSize(300);
   height: remSize(313);
   position: absolute;
-  bottom:0;
-  left:remSize(-30);
+  //bottom: 0;
+  //left: remSize(-30);
+  bottom: remSize(-313);
+  left: remSize(-343);
+  transition: all 0.5s;
   background-size: remSize(300) remSize(313);
   background-image: url('../../assets/image/p4_cat.png');
+  z-index: 30;
 }
-.box{
+
+.box {
   position: absolute;
-  //left:remSize(325);
-  bottom:0;
+  bottom: 0;
   height: remSize(973);
+  animation: bm 2s;
+  animation-fill-mode: both;
 }
-.subBox{
+
+@keyframes bm {
+  from {
+    bottom: remSize(-973);
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+.subBox {
   font-size: remSize(30);
   font-weight: bolder;
   height: remSize(361);
-  width:remSize(586);
+  width: remSize(586);
   margin-bottom: remSize(-37);
   background-image: url('../../assets/image/p4_box.png');
   background-size: remSize(586) remSize(361);
@@ -28,62 +45,113 @@
   text-align: center;
   line-height: remSize(60);
   position: relative;
+  animation-fill-mode: both;
+  z-index: 20;
+  &:first-of-type {
+    z-index: 10;
+  }
 }
-.left{
+
+.left {
   position: absolute;
-  left:0;
-  top:0;
-  width:remSize(124);
-  height:remSize(973);
+  left: 0;
+  top: 0;
+  width: remSize(124);
+  height: remSize(973);
+  z-index: 30;
 }
-.a1{
+
+.a1 {
   animation: a1 1.5s;
-  left:remSize(115/3);
-  top:remSize(-37/3)
+  left: remSize(115/3);
+  top: remSize(-37/3);
 }
-.a2{
+
+.a2 {
   animation: a2 1.5s;
-  left:remSize(115*2/3);
-  top:remSize(-37*2/3);
+  left: remSize(115*2/3);
+  top: remSize(-37*2/3);
 }
-.a3{
+
+.a3 {
   animation: a3 1.5s;
-  left:remSize(115);
-  top:remSize(-37);
+  left: remSize(115);
+  top: remSize(-37);
+}
+.blinea{
+  animation: bla 1s;
+  animation-fill-mode: both;
+}
+.bline {
+  width:0;
+  height:0;
+  position: absolute;
+  z-index: 15;
+  right: 0.8rem;
+  top: 9.3rem;
+  overflow: hidden;
+  .line {
+    width: remSize(185);
+    height: remSize(300);
+    right: remSize(-36);
+    top: remSize(-68);
+    position: absolute;
+  }
+  .ball{
+    position: absolute;
+    width: remSize(72);
+    height: remSize(72);
+    left:0;
+    bottom:0;
+  }
+}
+@keyframes bla {
+  from{
+    width: 0;
+    height: 0;
+  }
+  to{
+    width: remSize(185);
+    height: remSize(300);
+  }
 }
 @keyframes a1 {
   from {
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
   }
   to {
-    left:remSize(115/3);
-    top:remSize(-37/3);
+    left: remSize(115/3);
+    top: remSize(-37/3);
   }
 }
+
 @keyframes a2 {
   from {
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
   }
   to {
-    left:remSize(115*2/3);
-    top:remSize(-37*2/3);
+    left: remSize(115*2/3);
+    top: remSize(-37*2/3);
   }
 }
+
 @keyframes a3 {
   from {
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
   }
   to {
-    left:remSize(115);
-    top:remSize(-37);
+    left: remSize(115);
+    top: remSize(-37);
   }
 }
-.l2{
+
+.l2 {
   padding-top: remSize(100);
 }
-.l1{
+
+.l1 {
   padding-top: remSize(135);
 }
