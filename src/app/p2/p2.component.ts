@@ -8,13 +8,22 @@ import {Router} from "@angular/router";
 })
 export class P2Component implements OnInit {
 
+    canClick = false;
+
     constructor(private router: Router) {
+        this.canClick = false;
+        setTimeout(() => {
+            this.canClick = true;
+        }, 1500);
     }
 
     ngOnInit() {
     }
 
     bindViewTap() {
+        if (!this.canClick) {
+            return;
+        }
         const self = this;
         $(".iHole").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
             setTimeout(() => {

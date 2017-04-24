@@ -12,6 +12,9 @@
   right: remSize(360);
   height: remSize(107);
   width: remSize(480);
+  transform-origin: right bottom;
+  animation: l1A 0.5s;
+  animation-fill-mode: both;
 }
 
 .l2 {
@@ -20,6 +23,31 @@
   top: remSize(70);
   height: remSize(53);
   width: remSize(428);
+  transform-origin: left bottom;
+  animation: l2A 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes l1A {
+  from {
+    transform: rotate(-20deg);
+    top: remSize(-175);
+  }
+  to {
+    transform: rotate(0deg);
+    top: remSize(35);
+  }
+}
+
+@keyframes l2A {
+  from {
+    transform: rotate(20deg);
+    top: remSize(-140);
+  }
+  to {
+    transform: rotate(-0deg);
+    top: remSize(70);
+  }
 }
 
 .block {
@@ -31,6 +59,19 @@
   border: 3px solid #303030;
   background-color: white;
   text-align: center;
+  animation: bA 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes bA {
+  from {
+    top: remSize(-100);
+    bottom: remSize(310);
+  }
+  to {
+    top: remSize(110);
+    bottom: remSize(100);
+  }
 }
 
 .block:before {
