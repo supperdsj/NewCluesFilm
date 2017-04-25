@@ -1,12 +1,12 @@
 @import "../remSize";
 
 .river {
-  width: remSize(2250);
+  width: 48rem;
   height: 100%;
   background-image: url("/assets/image/p6_river.png");
   background-size: remSize(2250) remSize(706);
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 7rem;
   position: relative;
   left: 0;
   transition: all 0.5s;
@@ -37,23 +37,54 @@
   background-color: #fff;
 }
 
-.b1 .img {
+.b1, .b2 {
+  width: 16rem;
+  height: 100%;
+}
+
+@keyframes bc1 {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes bc2 {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bcf {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.s1 .img {
   top: remSize(40);
-  left: remSize(820);
+  left: remSize(50);
 }
 
-.b1 .section {
-  left: remSize(820);
+.s1 .section {
+  left: remSize(50);
   bottom: remSize(40);
 }
 
-.b2 .img {
-  left: remSize(1570);
+.s2 .img {
+  left: remSize(50);
   bottom: remSize(40);
 }
 
-.b2 .section {
-  left: remSize(1570);
+.s2 .section {
+  left: remSize(50);
   top: remSize(40);
 }
 
@@ -77,25 +108,80 @@
 .h2:before {
   content: '• '
 }
-
+.content {
+  position: absolute;
+  width:16rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 .s1 {
   left: remSize(-750);
+  .content {
+    left: 16rem;
+    top: 0;
+    bottom: 0;
+    animation: bc1 1s;
+    animation-fill-mode: both;
+  }
 }
 
 .s2 {
   left: remSize(-1500);
+  .content {
+    left: 32rem;
+    top: 0;
+    bottom: 0;
+    animation: bc2 1s;
+    animation-fill-mode: both;
+  }
 }
 
-.content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: all 0.5s;
-}
+
 
 .sc {
   opacity: 1;
+}
+
+.bw {
+  position: absolute;
+  width: remSize(112);
+  height: remSize(83);
+  left: 5rem;
+  top: 11.9rem;
+}
+
+.lb {
+  position: absolute;
+  width: remSize(340);
+  height: remSize(137);
+  top: remSize(390);
+  left: remSize(0);
+  animation: bla 1s;
+  animation-fill-mode: both;
+  overflow-x: hidden;
+  .ball {
+    width: remSize(72);
+    height: remSize(72);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .line {
+    width: remSize(303);
+    height: remSize(101);
+    position: absolute;
+    left: 0;
+    top: remSize(100);
+  }
+}
+
+@keyframes bla {
+  from {
+    width: 0;
+    height: remSize(100);
+  }
+  to {
+    width: remSize(340);
+    height: remSize(237);
+  }
 }

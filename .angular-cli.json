@@ -23,7 +23,8 @@
       ],
       "scripts": [
         "assets/js/zepto.min.js",
-        "assets/js/initRem.js"
+        "assets/js/initRem.js",
+        "assets/js/smtp.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -5,6 +5,7 @@ import {P3Component} from "./p3/p3.component";
 import {P4Component} from "./p4/p4.component";
 import {P5Component} from "./p5/p5.component";
 import {P6Component} from "./p6/p6.component";
+import {P7Component} from "./p7/p7.component";
 const ROUTES: Routes = [
     {path: 'p1', component: P1Component},
     {path: 'p2', component: P2Component},
@@ -12,6 +13,7 @@ const ROUTES: Routes = [
     {path: 'p4', component: P4Component},
     {path: 'p5', component: P5Component},
     {path: 'p6', component: P6Component},
+    {path: 'p7', component: P7Component},
     {path: '**', component: P1Component}
 ];
 export const ROOT_ROUTING = RouterModule.forRoot(ROUTES);

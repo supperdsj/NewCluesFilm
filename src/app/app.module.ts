@@ -11,6 +11,7 @@ import { P3Component } from './p3/p3.component';
 import { P4Component } from './p4/p4.component';
 import { P5Component } from './p5/p5.component';
 import { P6Component } from './p6/p6.component';
+import { P7Component } from './p7/p7.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { P6Component } from './p6/p6.component';
         P3Component,
         P4Component,
         P5Component,
-        P6Component
+        P6Component,
+        P7Component
     ],
     imports: [
         ROOT_ROUTING,

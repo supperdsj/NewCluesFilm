@@ -1,0 +1,21 @@
+@import "../remSize";
+img{
+  position: absolute;
+  top:remSize(250);
+  width:remSize(750);
+  height: remSize(720);
+}
+.content{
+  position: absolute;
+  top:remSize(730);
+  left:remSize(300);
+  font-style:italic;
+  h1{
+    font-size: remSize(40);
+    text-indent: 0.5em;
+  }
+  h2{
+    margin-top: remSize(10);
+    font-size: remSize(28);
+  }
+}

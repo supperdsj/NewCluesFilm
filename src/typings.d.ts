@@ -1,6 +1,7 @@
 /* SystemJS module definition */
 declare var module: NodeModule;
 interface NodeModule {
-  id: string;
+    id: string;
 }
-declare var $:any;
+declare var $: any;
+declare var Email: any;
