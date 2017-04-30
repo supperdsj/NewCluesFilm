@@ -38,7 +38,7 @@
 }
 
 .an {
-  margin-top: remSize(180);
+  margin-top: remSize(100);
   width: remSize(750);
   position: relative;
   height: remSize(500);
@@ -47,10 +47,39 @@
 
 .hole {
   position: absolute;
-  left: remSize(90);
-  top: remSize(20);
+  left: 1.92rem;
+  top: 0.42667rem;
   width: remSize(170);
   height: remSize(250);
+}
+
+.c1, .c2, .c3 {
+  position: absolute;
+  transition: opacity 0.1s!important;
+}
+
+.c1 {
+  width: remSize(245);
+  height: remSize(310);
+  left: 1.92rem;
+  opacity: 0;
+  top: 0.42667rem;
+}
+
+.c2 {
+  width: remSize(366);
+  height: remSize(408);
+  opacity: 0;
+  left: 1.92rem;
+  top: 0;
+}
+
+.c3 {
+  width: remSize(431);
+  height: remSize(268);
+  opacity: 0;
+  left: 3rem;
+  top: 3.5rem;
 }
 
 .cat {
@@ -74,7 +103,7 @@
 .ball {
   position: absolute;
   left: remSize(540);
-  top: remSize(230);
+  top: 8rem;
   width: remSize(72);
   height: remSize(72);
 }
@@ -92,14 +121,17 @@
   animation: holeA 0.5s;
   animation-fill-mode: both;
 }
+
 .catOutHole {
   animation: ih 0.2s;
   animation-fill-mode: both;
 }
-.roll{
+
+.roll {
   animation: br 0.5s;
   animation-fill-mode: both;
 }
+
 @keyframes ih {
   from {
     width: 0;
@@ -110,6 +142,7 @@
     width: remSize(431);
   }
 }
+
 @keyframes br {
   from {
     left: remSize(540);

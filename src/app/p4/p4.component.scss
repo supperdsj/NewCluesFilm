@@ -79,7 +79,11 @@
   top: remSize(-37);
 }
 .blinea{
-  animation: bla 1s;
+  animation: bla 0.8s;
+  animation-fill-mode: both;
+}
+.blinea2{
+  animation: bla2 0.5s;
   animation-fill-mode: both;
 }
 .bline {
@@ -87,13 +91,14 @@
   height:0;
   position: absolute;
   z-index: 15;
-  right: 0.8rem;
+  //right: 0.8rem;
+  right: 0;
   top: 9.3rem;
   overflow: hidden;
   .line {
     width: remSize(185);
     height: remSize(300);
-    right: remSize(-36);
+    right: remSize(-70);
     top: remSize(-68);
     position: absolute;
   }
@@ -105,16 +110,67 @@
     bottom:0;
   }
 }
+
+.c0,.c1, .c2, .c3,.c4 {
+  position: absolute;
+  transition: opacity 0.1s!important;
+  opacity: 0;
+  z-index: 200;
+}
+.c0 {
+  width: remSize(299);
+  height: remSize(310);
+  bottom: 0;
+  left: -1rem;
+  opacity: 1;
+}
+.c1 {
+  width: remSize(299);
+  height: remSize(310);
+  bottom: 0;
+  left: -1rem;
+}
+
+.c2 {
+  width: remSize(299);
+  height: remSize(310);
+  bottom: 0;
+  left: -1rem;
+}
+
+.c3 {
+  width: remSize(299);
+  height: remSize(284);
+  opacity: 0;
+  bottom: 0;
+  left: 7.5rem;
+}
+.c4 {
+  width: remSize(299);
+  height: remSize(291);
+  opacity: 0;
+  bottom: 7.5rem;
+  left: 9.7rem;
+}
 @keyframes bla {
   from{
     width: 0;
-    height: 0;
+    height:remSize(72);
   }
   to{
-    width: remSize(185);
-    height: remSize(300);
+    width: remSize(195);
+    height: remSize(310);
   }
-}
+}@keyframes bla2 {
+   from{
+     width: remSize(195);
+     height: remSize(310);
+   }
+   to{
+     width: 0;
+     height: remSize(72);
+   }
+ }
 @keyframes a1 {
   from {
     left: 0;

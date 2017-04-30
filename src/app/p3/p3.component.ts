@@ -24,14 +24,30 @@ export class P3Component implements OnInit {
             return;
         }
         const self = this;
-        $(".cat").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
-        }).attr("class", "cat catOutHole");
+        setTimeout(() => {
+            $('.c1').css('opacity', '1');
+        }, 0);
+        setTimeout(() => {
+            $('.c1').css('opacity', '0');
+        }, 200);
+        setTimeout(() => {
+            $('.c2').css('opacity', '1');
+        }, 200);
+        setTimeout(() => {
+            $('.c2').css('opacity', '0');
+        }, 400);
+        setTimeout(() => {
+            $('.c3').css('opacity', '1');
+        }, 400);
+        // setTimeout($('.c3').css('opacity', '1'), 150);
+        // $(".cat").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
+        // }).attr("class", "cat catOutHole");
         setTimeout(() => {
             $(".ball").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
                 setTimeout(() => {
                     self.router.navigateByUrl('/p4');
-                }, 150);
+                }, 2000);
             }).attr("class", "ball roll");
-        }, 100);
+        }, 400);
     }
 }
