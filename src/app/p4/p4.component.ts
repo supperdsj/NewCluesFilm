@@ -7,8 +7,13 @@ import {Router} from "@angular/router";
     styleUrls: ['./p4.component.scss']
 })
 export class P4Component implements OnInit {
+    canClick = false;
 
     constructor(private router: Router) {
+        this.canClick = false;
+        setTimeout(() => {
+            this.canClick = true;
+        }, 2000);
     }
 
     ngOnInit() {
@@ -29,6 +34,9 @@ export class P4Component implements OnInit {
     }
 
     bindViewTap() {
+        if (!this.canClick) {
+            return;
+        }
         const self = this;
         const step = 300;
         // this.router.navigateByUrl('/p5');
