@@ -24,6 +24,7 @@ export class P2Component implements OnInit {
         if (!this.canClick) {
             return;
         }
+        this.canClick = false;
         const self = this;
         $(".iHole").one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function () {
             setTimeout(() => {

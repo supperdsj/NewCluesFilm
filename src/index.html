@@ -11,8 +11,62 @@
     <link href="//cdn.bootcss.com/animations/2.1/css/animations.css" rel="stylesheet">
     <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
     <script src="/assets/js/initRem.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </head>
 <body>
-<app-root>Loading...</app-root>
+<script>
+    var share={
+        title:'新线索标题',
+        desc:'新线索描述',
+        link:'http://ncf.paperfuns.com',
+        imgUrl:'http://ncf.paperfuns.com/assets/image/p2_cat.png'
+    };
+    (function(share){
+        console.log(share);
+        wx.onMenuShareTimeline({
+            title: share.title, // 分享标题
+            link: share.link, // 分享链接
+            imgUrl: share.imgUrl // 分享图标
+        });
+        wx.onMenuShareAppMessage({
+            title: share.title, // 分享标题
+            desc: share.desc, // 分享描述
+            link: share.link, // 分享链接
+            imgUrl: share.imgUrl // 分享图标
+        });
+        wx.onMenuShareQQ({
+            title: share.title, // 分享标题
+            desc: share.desc, // 分享描述
+            link: share.link, // 分享链接
+            imgUrl: share.imgUrl // 分享图标
+        });
+        wx.onMenuShareWeibo({
+            title: share.title, // 分享标题
+            desc: share.desc, // 分享描述
+            link: share.link, // 分享链接
+            imgUrl: share.imgUrl // 分享图标
+        });
+        wx.onMenuShareQZone({
+            title: share.title, // 分享标题
+            desc: share.desc, // 分享描述
+            link: share.link, // 分享链接
+            imgUrl: share.imgUrl // 分享图标
+        });
+    })(share);
+</script>
+<app-root>
+    <div class="loading" style="
+    position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom: 0;
+  font-size: 1rem;
+  background-color: white;
+  color: #333333;
+">
+        loading...
+    </div>
+</app-root>
 </body>
 </html>

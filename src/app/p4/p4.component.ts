@@ -37,6 +37,7 @@ export class P4Component implements OnInit {
         if (!this.canClick) {
             return;
         }
+        this.canClick = false;
         const self = this;
         const step = 300;
         // this.router.navigateByUrl('/p5');

@@ -50,6 +50,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes bc2 {
   from {
     transform: scale(0);
@@ -108,14 +109,17 @@
 .h2:before {
   content: '• '
 }
+
 .content {
   position: absolute;
-  width:16rem;
+  width: 16rem;
   opacity: 0;
   transition: opacity 0.5s;
 }
+
 .s1 {
-  left: remSize(-750);
+  //left: remSize(-750);
+  transform: translateX(remSize(-750));
   .content {
     left: 16rem;
     top: 0;
@@ -126,7 +130,8 @@
 }
 
 .s2 {
-  left: remSize(-1500);
+  //left: remSize(-1500);
+  transform: translateX(remSize(-1500));
   .content {
     left: 32rem;
     top: 0;
@@ -135,8 +140,6 @@
     animation-fill-mode: both;
   }
 }
-
-
 
 .sc {
   opacity: 1;

@@ -65,12 +65,12 @@
 
 @keyframes bA {
   from {
-    top: remSize(-100);
-    bottom: remSize(310);
+    transform: translateY(remSize(-200));
+    //top: remSize(-100);
+    //bottom: remSize(310);
   }
   to {
-    top: remSize(110);
-    bottom: remSize(100);
+    transform: translateY(0);
   }
 }
 

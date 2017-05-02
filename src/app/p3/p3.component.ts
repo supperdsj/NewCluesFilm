@@ -23,6 +23,7 @@ export class P3Component implements OnInit {
         if (!this.canClick) {
             return;
         }
+        this.canClick = false;
         const self = this;
         setTimeout(() => {
             $('.c1').css('opacity', '1');
