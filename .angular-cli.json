@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "animate.css"
       ],
       "scripts": [
         "assets/js/zepto.min.js",

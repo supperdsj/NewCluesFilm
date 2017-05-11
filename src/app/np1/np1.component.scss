@@ -1,0 +1,189 @@
+@import "../remSize";
+
+$catSize: 280;
+.logoGroup {
+  margin-top: remSize(100);
+  //transition: transform 1s;
+  opacity: 0;
+  z-index: 0;
+}
+
+.logoGroupMove {
+  transform: translate(0, remSize(-150));
+}
+
+.logo {
+  width: remSize(482);
+  height: remSize(243);
+  position: relative;
+  margin: 0 auto;
+  .lb {
+    width: remSize(482);
+    height: remSize(243);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .lc {
+    width: remSize(210);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .lcB {
+    transition: all 0.5s;
+    width: remSize($catSize);
+    transform: translate(remSize((482 - $catSize) / 2), 0);
+  }
+  .sImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: remSize(482);
+    height: remSize(243);
+  }
+  .logoShadow {
+    width: remSize(482);
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.ry {
+  transform: scaleY(-1);
+  opacity: 0.5;
+  margin-top: 0 !important;
+}
+
+.text1 {
+  color: #717071;
+  font-size: remSize(27);
+  width: remSize(475);
+  margin: 0 auto;
+  margin-top: -3rem;
+  opacity: 0;
+}
+
+.text1 + .text1 {
+  margin-top: remSize(30);
+}
+
+.text2 {
+  margin: 0 auto;
+  margin-top: remSize(80);
+  text-align: center;
+  color: #717071;
+  * {
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+  }
+  .h1 {
+    font-weight: bolder;
+    font-size: remSize(30);
+  }
+  .h2 {
+    font-weight: normal;
+    font-size: remSize(28);
+    margin-bottom: remSize(10);
+  }
+}
+
+.hole {
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s;
+  transform-origin: 50% 25%;
+  position: fixed;
+  top: 11rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: remSize(400);
+}
+
+.holeShow {
+  opacity: 1;
+  transform: scale(1);
+}
+.holeHide {
+  opacity: 1;
+  transform: scale(0);
+}
+
+.hf, .he {
+  margin: 0 auto;
+  position: relative;
+  width: remSize(291);
+  height: remSize(400);
+}
+
+.catInHole {
+  animation: catInHoleAnimate 0.5s linear;
+  animation-fill-mode: both;
+}
+.catOutHole {
+  animation: catOutHoleAnimate 0.5s;
+  animation-fill-mode: both;
+}
+
+.ballAnimate {
+  width: 4.4rem!important;
+}
+
+.bAnimate {
+  transform: rotate(-720deg)!important;
+}
+
+.ball {
+  position: absolute;
+  top: 11rem;
+  right: 0;
+  //width: 4.4rem;
+  width: 0;
+  height: remSize(72);
+  overflow: hidden;
+  transition: width 0.5s;
+  .b {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: remSize(72);
+    height: remSize(72);
+    transition: transform 0.5s;
+  }
+  .l {
+    bottom: 0;
+    left: remSize(35);
+    right: 0;
+    width: remSize(265);
+    height: remSize(72);
+    position: absolute;
+    background-image: url('../../assets/image/np1/bbline.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%
+  }
+}
+
+@keyframes catInHoleAnimate {
+  0% {
+    transform: translate(remSize((482 - $catSize) / 2), 0);
+  }
+  60% {
+    transform: translate(remSize((482 - $catSize) / 2), 6rem) rotate(0) scale(1);
+  }
+  100% {
+    transform: translate(remSize((482 - $catSize) / 2), 10rem) rotate(45deg) scale(0.5);
+  }
+}
+@keyframes catOutHoleAnimate {
+  0% {
+    transform: translate(remSize((482 - $catSize) / 2), 10rem);
+  }
+  100% {
+    transform: translate(remSize((482 - $catSize) / 2), 3.8rem);
+  }
+}
