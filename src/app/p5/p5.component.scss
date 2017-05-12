@@ -85,10 +85,13 @@
   left: remSize(283);
   top: remSize(7);
 }
-
+.content{
+  text-align: center;
+}
 .it {
   width: remSize(542);
   height: remSize(760);
+  margin: 0 auto;
   margin-top: remSize(55);
 }
 

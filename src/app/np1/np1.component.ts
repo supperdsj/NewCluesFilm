@@ -41,7 +41,7 @@ export class Np1Component implements OnInit {
                                     $('#tc').attr('src', '/assets/image/np1/logo_cat_black.png');
                                     $('#tc').addClass('catOutHole');
                                     setTimeout(() => {
-                                        this.router.navigateByUrl('/p1');
+                                        this.router.navigateByUrl('/p4');
                                     }, 1000);
                                 }, 1000);
                             }, 500);

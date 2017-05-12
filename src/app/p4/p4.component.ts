@@ -22,54 +22,38 @@ export class P4Component implements OnInit {
             $($('.subBox')[1]).attr('class', 'subBox l2 a2');
             $($('.subBox')[2]).attr('class', 'subBox l1 a3');
             setTimeout(() => {
-                $('.bline').attr('class', 'bline blinea');
-            }, 1000);
-            setTimeout(() => {
-                $('.cat').css({
-                    'bottom': '0',
-                    'left': '-0.64rem'
-                });
+                $('.text').addClass('animated fadeIn');
             }, 500);
-        }, 1300);
-    }
-
-    bindViewTap() {
-        if (!this.canClick) {
-            return;
-        }
-        this.canClick = false;
-        const self = this;
-        const step = 300;
-        // this.router.navigateByUrl('/p5');
-        setTimeout(() => {
-            $('.c0').css('opacity', '0');
-        }, step * 0 + 50);
-        setTimeout(() => {
-            $('.c1').css('opacity', '1');
-        }, step * 0);
-        setTimeout(() => {
-            $('.c1').css('opacity', '0');
-        }, step * 1 + 50);
-        setTimeout(() => {
-            $('.c2').css('opacity', '1');
-        }, step * 1);
-        setTimeout(() => {
-            $('.c2').css('opacity', '0');
-        }, step * 2 + 50);
-        setTimeout(() => {
-            $('.c3').css('opacity', '1');
-        }, step * 2);
-        setTimeout(() => {
-            $('.c3').css('opacity', '0');
-        }, step * 3 + 50);
-        setTimeout(() => {
-            $('.c4').css('opacity', '1');
-        }, step * 3);
-        setTimeout(() => {
-            $('.bline').attr('class', 'bline blinea2');
             setTimeout(() => {
-                self.router.navigateByUrl('/p5');
-            }, 2000);
-        }, step * 3);
+                $('.inBall').addClass('inBallAnimate');
+                setTimeout(() => {
+                    $('.catStay').addClass('animated fadeInLeft');
+                    $('html').one('click', () => {
+                        const arr = [$('.catStay'), $('.catMove1'), $('.catMove2'), $('.catMove3'), $('.catMove4')];
+                        const delay = 200;
+                        arr[0].removeClass('animated fadeInLeft');
+                        setTimeout(() => {
+                            $('.inBall').addClass('outBallAnimate');
+                            $('.box').removeClass('animated fadeInRight');
+                            setTimeout(() => {
+                                $('.box').addClass('boxMoveOut');
+                                setTimeout(() => {
+                                    $('.title').addClass('animated fadeInLeft').css('opacity', 1);
+                                }, 500);
+                            }, 100);
+                        }, delay);
+                        for (let i = 0; i < arr.length - 1; i++) {
+                            setTimeout(() => {
+                                arr[i].css('opacity', 0);
+                                arr[i + 1].css('opacity', 1);
+                            }, i * delay);
+                        }
+                        setTimeout(() => {
+                            this.router.navigateByUrl('/p5');
+                        }, (arr.length) * delay * 3);
+                    });
+                }, 300);
+            }, 1000);
+        }, 1300);
     }
 }
