@@ -13,7 +13,7 @@ export class P6Component implements OnInit {
         {
             img: "/assets/image/p6/1.jpg",
             title: "我是证人2",
-            subTitle: "2017年前期开发中",
+            subTitle2: "2017年前期开发中",
             texts: [
                 "《我是证人》悬疑犯罪系列第二部",
                 "人气偶像担纲打造高品质犯罪片",
@@ -34,7 +34,7 @@ export class P6Component implements OnInit {
         {
             img: "/assets/image/p6/3.jpg",
             title: "有爱我们床上谈",
-            subTitle: "2017年网剧x电影同步开发",
+            subTitle2: "2017年网剧x电影同步开发",
             texts: [
                 "摩登都市性喜剧稀缺题材",
                 "“约炮”视角毒辣解剖析都市两性心理",
@@ -44,7 +44,7 @@ export class P6Component implements OnInit {
         {
             img: "/assets/image/p6/4.jpg",
             title: "宋时归",
-            subTitle: "2017年超量级古装剧集开发中",
+            subTitle2: "2017年超量级古装剧集开发中",
             texts: [
                 "天使奥斯卡千万级王文首次影视改编",
                 "兵人独特视角刻画宋辽战争诡谲政局",
@@ -54,7 +54,7 @@ export class P6Component implements OnInit {
         {
             img: "/assets/image/p6/5.jpg",
             title: "白蛇疾文录",
-            subTitle: "2017超量级古装剧集开发中",
+            subTitle2: "2017超量级古装剧集开发中",
             texts: [
                 "马伯庸新作同步改编",
                 "白蛇传奇置身生化危机→超脑洞主线",
@@ -65,7 +65,7 @@ export class P6Component implements OnInit {
         {
             img: "/assets/image/p6/6.jpg",
             title: "格斗士",
-            subTitle: "2017年精品现代剧集开发中",
+            subTitle2: "2017年精品现代剧集开发中",
             texts: [
                 "网剧版《激战》荷尔蒙暴击屏幕",
                 "电影级制作团队担纲看齐美剧水准",
@@ -78,8 +78,13 @@ export class P6Component implements OnInit {
     }
 
     ngOnInit() {
+        $('*').removeClass('animated');
         setTimeout(() => {
             this.sel = 0;
+        }, 2000);
+        setTimeout(() => {
+            $('.river').css('transition', 'all 0.5s');
+            $('.star').addClass('animated bounceIn');
         }, 1000);
     }
 

@@ -1,40 +1,50 @@
 @import "../remSize";
 
+.dotBG {
+  background-color: #C4C4C4;
+}
+
 .river {
+  transform: translateX(remSize(-0));
   width: 48rem;
   height: 100%;
   background-image: url("/assets/image/p6_river.png");
-  background-size: remSize(2250) remSize(706);
+  background-size: remSize(2250) remSize(1334);
   background-repeat: no-repeat;
-  background-position: left 7rem;
+  background-position: left top;
   position: relative;
   left: 0;
-  transition: all 0.5s;
+  .title {
+    font-weight: bolder;
+    font-size: remSize(55);
+    position: absolute;
+    //width:16rem;
+    text-align: center;
+    left: 4.5rem;
+    top: 2.5rem;
+  }
 }
 
 .it {
-  width: remSize(542);
-  height: remSize(760);
+  width: remSize(480);
+  height: remSize(650);
+  position: absolute;
 }
 
 .img {
-  border: 3px solid #303030;
+  //border: 3px solid #303030;
   margin: 0 auto;
-  padding: remSize(25);
-  background-color: #fff;
+  background-size: 100% 100%;
+  //padding: remSize(25);
+  //background-color: #fff;
   font-size: 0;
-  width: remSize(542);
-  height: remSize(760);
   position: absolute;
 }
 
 .section {
-  border: 3px solid #303030;
   margin: 0 auto;
-  padding: remSize(25);
-  width: remSize(542);
+  box-sizing: border-box;
   position: absolute;
-  background-color: #fff;
 }
 
 .b1, .b2 {
@@ -70,42 +80,74 @@
 }
 
 .s1 .img {
-  top: remSize(40);
-  left: remSize(50);
+  top: remSize(90);
+  left: remSize(65);
+  background-image: url('../../assets/image/p6_bk1.png');
+  width: remSize(622);
+  height: remSize(782);
+  .it{
+    left:remSize(103);
+    top:remSize(50);
+  }
 }
 
 .s1 .section {
-  left: remSize(50);
-  bottom: remSize(40);
+  left: remSize(75);
+  top: remSize(950);
+  background-image: url('../../assets/image/p6_bk2.png');
+  padding-top: remSize(25);
+  padding-left: remSize(70);
+  padding-right: remSize(40);
+  width: remSize(598);
+  height:remSize(274);
 }
 
 .s2 .img {
-  left: remSize(50);
-  bottom: remSize(40);
+  left: remSize(65);
+  top: remSize(475);
+  background-image: url('../../assets/image/p6_bk4.png');
+  width: remSize(622);
+  height: remSize(782);
+  .it{
+    left:remSize(40);
+    top:remSize(40);
+  }
 }
 
 .s2 .section {
-  left: remSize(50);
-  top: remSize(40);
+  left: remSize(75);
+  top: remSize(65);
+  background-image: url('../../assets/image/p6_bk3.png');
+  padding-top: remSize(50);
+  padding-left: remSize(50);
+  padding-right: remSize(60);
+  width: remSize(615);
+  height:remSize(337);
 }
 
 .h1 {
   font-size: remSize(35);
   text-align: left;
-  margin-bottom: remSize(20);
+  font-weight: bolder;
+  margin-bottom: remSize(15);
 }
 
 .h1 .small {
-  font-size: remSize(30);
+  font-size: remSize(22);
   display: inline;
 }
 
-.h2 {
-  font-size: remSize(25);
+.h2,.h3 {
+  font-size: remSize(22);
+  line-height: 1.5;
   text-align: left;
-  padding: 0;
+  padding: 0 remSize(20);
 }
-
+.h3 {
+  font-size: remSize(25);
+  font-weight: bolder;
+  margin-bottom: 0.25em;
+}
 .h2:before {
   content: '• '
 }
@@ -124,7 +166,8 @@
     left: 16rem;
     top: 0;
     bottom: 0;
-    animation: bc1 1s;
+    animation: bc1 0.6s;
+    //animation: bounceInUp 1s;
     animation-fill-mode: both;
   }
 }
@@ -136,8 +179,46 @@
     left: 32rem;
     top: 0;
     bottom: 0;
-    animation: bc2 1s;
+    animation: bc2 0.6s;
+    //animation: bounceInUp 1s;
     animation-fill-mode: both;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -153,6 +234,14 @@
   top: 11.9rem;
 }
 
+.star{
+  width: remSize(136);
+  height: remSize(106);
+  position: absolute;
+  left: 5rem;
+  top: 11.5rem;
+  opacity: 0;
+}
 .lb {
   position: absolute;
   width: remSize(340);
@@ -177,7 +266,6 @@
     top: remSize(100);
   }
 }
-
 @keyframes bla {
   from {
     width: 0;

@@ -39,16 +39,16 @@ export class P5Component implements OnInit {
             title: "逆时营救",
             texts: [
                 "原创华语科幻动作电影",
-                "上海国际电影节创投项目最具市场价值潜力奖",
-                "成龙监制、杨幂、霍建华联袂出演",
+                "第50届休斯顿国际电影节雷米大奖",
+                "成龙监制，杨幂、霍建华联袂出演",
                 "集结国际一流制作班底"
             ]
         },
         {
             img: "/assets/image/p5/5.jpg",
             title: "重生电梯",
+            subTitle: "《奇妙物语》主题系列电影，2017年陆续公映",
             texts: [
-                "《奇妙物语》主题系列电影，2017年陆续公映",
                 "迷幻青春症候群四部曲（《重生电梯》等）",
                 "聚焦半熟人群成长焦虑",
                 "直面人性欲望残酷抉择"
@@ -60,7 +60,8 @@ export class P5Component implements OnInit {
     }
 
     ngOnInit() {
-
+        $('html').off('click');
+        $('*').removeClass('animated');
         setTimeout(() => {
             this.sel = 0;
         }, 0);

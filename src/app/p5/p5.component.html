@@ -7,6 +7,7 @@
             <img src="{{film.img}}" class="it">
             <div class="section">
                 <div class="h1">{{film.title}}</div>
+                <div class="h3" *ngIf="film.subTitle">{{film.subTitle}}</div>
                 <div class="h2" *ngFor="let text of film.texts">{{text}}</div>
             </div>
         </div>

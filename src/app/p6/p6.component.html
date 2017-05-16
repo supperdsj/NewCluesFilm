@@ -1,38 +1,26 @@
 <div class="dotBG">
     <div class="river {{sel>=0&&sel<3?'s1':''}} {{sel>=3?'s2':''}}">
+        <div class="title">开发中项目</div>
         <div class="lb">
             <img src="/assets/image/p6_line.png" class="line">
             <img src="/assets/image/np1/bb.png" class="ball">
         </div>
         <img src="/assets/image/p6_w.png" class="bw">
+        <img src="/assets/image/p6_star.png" class="star">
         <!--<div class="b1">-->
-            <div *ngFor="let film of films;let i = index;" class="content {{i==sel?'sc':''}}">
-                <div class="img">
-                    <img src="{{film.img}}" class="it">
-                </div>
-                <div class="section">
-                    <div class="h1">
-                        《{{film.title}}》
-                        <div class="small">{{film.subTitle}}</div>
-                    </div>
-                    <div class="h2" *ngFor="let text of film.texts">{{text}}</div>
-                </div>
+        <div *ngFor="let film of films;let i = index;" class="content {{i==sel?'sc':''}}">
+            <div class="img">
+                <img src="{{film.img}}" class="it">
             </div>
-        <!--</div>-->
-        <!--<div class="b2">-->
-            <!--<div *ngFor="let film of films;let i = index;" class="content  {{i==sel?'sc':''}}">-->
-                <!--<div class="img">-->
-                    <!--<img src="{{film.img}}" class="it">-->
-                <!--</div>-->
-                <!--<div class="section">-->
-                    <!--<div class="h1">-->
-                        <!--《{{film.title}}》-->
-                        <!--<div class="small">{{film.subTitle}}</div>-->
-                    <!--</div>-->
-                    <!--<div class="h2" *ngFor="let text of film.texts">{{text}}</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+            <div class="section">
+                <div class="h1">
+                    《{{film.title}}》
+                    <div class="small" *ngIf="film.subTitle">{{film.subTitle}}</div>
+                </div>
+                <div class="h3" *ngIf="film.subTitle2">{{film.subTitle2}}</div>
+                <div class="h2" *ngFor="let text of film.texts">{{text}}</div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="clickArea" (click)="bindViewTap()"></div>

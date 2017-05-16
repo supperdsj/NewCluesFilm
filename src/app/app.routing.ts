@@ -11,13 +11,13 @@ import {Np1Component} from "./np1/np1.component";
 const ROUTES: Routes = [
     {path: 'p0', component: P0Component},
     {path: 'np1', component: Np1Component},
-    {path: 'p1', component: P1Component},
-    {path: 'p2', component: P2Component},
-    {path: 'p3', component: P3Component},
+    // {path: 'p1', component: P1Component},
+    // {path: 'p2', component: P2Component},
+    // {path: 'p3', component: P3Component},
     {path: 'p4', component: P4Component},
     {path: 'p5', component: P5Component},
     {path: 'p6', component: P6Component},
     {path: 'p7', component: P7Component},
-    {path: '**', component: P0Component}
+    {path: '', component: P0Component}
 ];
 export const ROOT_ROUTING = RouterModule.forRoot(ROUTES);

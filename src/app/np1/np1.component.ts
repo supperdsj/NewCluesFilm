@@ -20,7 +20,8 @@ export class Np1Component implements OnInit {
             $('.h2').attr('class', 'h2 fadeInRight animated');
         }, 1000);
         setTimeout(() => {
-            $('html').one('click', () => {
+            $('html').on('click', () => {
+                $('html').off('click');
                 $('.logoShadow,.lb,.sImage,.text1,.text2,.ry .lc').addClass('fadeOut animated');
                 setTimeout(() => {
                     $('#tc').addClass('lcB');
@@ -53,6 +54,8 @@ export class Np1Component implements OnInit {
     }
 
     ngOnInit() {
+        $('*').removeClass('animated');
+        $('html').off('click');
     }
 
 }

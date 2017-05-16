@@ -17,6 +17,9 @@ export class P4Component implements OnInit {
     }
 
     ngOnInit() {
+        $('html').off('click');
+        $('*').removeClass('animated');
+        $('.box').addClass('animated fadeInRight');
         setTimeout(() => {
             $($('.subBox')[0]).attr('class', 'subBox l2 a1');
             $($('.subBox')[1]).attr('class', 'subBox l2 a2');
@@ -28,7 +31,8 @@ export class P4Component implements OnInit {
                 $('.inBall').addClass('inBallAnimate');
                 setTimeout(() => {
                     $('.catStay').addClass('animated fadeInLeft');
-                    $('html').one('click', () => {
+                    $('html').on('click', () => {
+                        $('html').off('click');
                         const arr = [$('.catStay'), $('.catMove1'), $('.catMove2'), $('.catMove3'), $('.catMove4')];
                         const delay = 200;
                         arr[0].removeClass('animated fadeInLeft');
