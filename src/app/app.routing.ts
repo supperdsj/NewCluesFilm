@@ -18,6 +18,6 @@ const ROUTES: Routes = [
     {path: 'p5', component: P5Component},
     {path: 'p6', component: P6Component},
     {path: 'p7', component: P7Component},
-    {path: '', component: P0Component}
+    {path: '**', component: P0Component}
 ];
 export const ROOT_ROUTING = RouterModule.forRoot(ROUTES);

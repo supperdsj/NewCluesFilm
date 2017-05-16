@@ -15,13 +15,13 @@
 </head>
 <body>
 <script>
-    var share={
-        title:'新线索标题',
-        desc:'新线索描述',
-        link:'http://ncf.paperfuns.com',
-        imgUrl:'http://ncf.paperfuns.com/assets/image/p2_cat.png'
+    var share = {
+        title: '新线索标题',
+        desc: '新线索描述',
+        link: 'http://ncf.paperfuns.com',
+        imgUrl: 'http://ncf.paperfuns.com/assets/image/p2_cat.png'
     };
-    (function(share){
+    (function (share) {
         console.log(share);
         wx.onMenuShareTimeline({
             title: share.title, // 分享标题
@@ -56,19 +56,17 @@
 </script>
 <app-root>
 </app-root>
-
-<!--<div id="loading" class="loading" style="-->
-    <!--position: fixed;-->
-  <!--left:0;-->
-  <!--right:0;-->
-  <!--top:0;-->
-  <!--bottom: 0;-->
-  <!--font-size: 1rem;-->
-  <!--background-color: white;-->
-  <!--z-index: 99999999999999;-->
-  <!--color: #333333;-->
-<!--">-->
-    <!--loading...-->
-<!--</div>-->
+<div id="loading" class="loading" style="
+position: fixed;
+left:0;
+right:0;
+top:0;
+bottom: 0;
+font-size: 1rem;
+background-color: white;
+z-index: 99999999999999;
+color: #333333;
+">
+</div>
 </body>
 </html>
