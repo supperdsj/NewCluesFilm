@@ -20,37 +20,39 @@ export class Np1Component implements OnInit {
             $('.h2').attr('class', 'h2 fadeInRight animated');
         }, 1000);
         setTimeout(() => {
-            $('html').on('click', () => {
-                $('html').off('click');
-                $('.logoShadow,.lb,.sImage,.text1,.text2,.ry .lc').addClass('fadeOut animated');
-                setTimeout(() => {
-                    $('#tc').addClass('lcB');
-                    $('.hole').addClass('holeShow');
-                    setTimeout(() => {
-                        $('#tc').attr('src', '/assets/image/np1/logo_cat_dead.png');
-                        setTimeout(() => {
-                            $('#tc').addClass('catInHole');
-                            setTimeout(() => {
-                                $('.ball').addClass('ballAnimate');
-                                $('.ball .b').addClass('bAnimate');
-                                setTimeout(() => {
-                                    setTimeout(() => {
-                                        $('.ball').removeClass('ballAnimate');
-                                        $('.ball .b').removeClass('bAnimate');
-                                        $('.hole').addClass('holeHide');
-                                    }, 500);
-                                    $('#tc').attr('src', '/assets/image/np1/logo_cat_black.png');
-                                    $('#tc').addClass('catOutHole');
-                                    setTimeout(() => {
-                                        this.router.navigateByUrl('/p4');
-                                    }, 1000);
-                                }, 1000);
-                            }, 500);
-                        }, 500);
-                    }, 1000);
-                }, 500);
-            });
+            $('.clickArea').css('display', 'block');
         }, 1500);
+    }
+
+    bindViewTap() {
+        $('.clickArea').css('display', 'none');
+        $('.logoShadow,.lb,.sImage,.text1,.text2,.ry .lc').addClass('fadeOut animated');
+        setTimeout(() => {
+            $('#tc').addClass('lcB');
+            $('.hole').addClass('holeShow');
+            setTimeout(() => {
+                $('#tc').attr('src', '/assets/image/np1/logo_cat_dead.png');
+                setTimeout(() => {
+                    $('#tc').addClass('catInHole');
+                    setTimeout(() => {
+                        $('.ball').addClass('ballAnimate');
+                        $('.ball .b').addClass('bAnimate');
+                        setTimeout(() => {
+                            setTimeout(() => {
+                                $('.ball').removeClass('ballAnimate');
+                                $('.ball .b').removeClass('bAnimate');
+                                $('.hole').addClass('holeHide');
+                            }, 500);
+                            $('#tc').attr('src', '/assets/image/np1/logo_cat_black.png');
+                            $('#tc').addClass('catOutHole');
+                            setTimeout(() => {
+                                this.router.navigateByUrl('/p4');
+                            }, 1000);
+                        }, 1000);
+                    }, 500);
+                }, 500);
+            }, 1000);
+        }, 500);
     }
 
     ngOnInit() {

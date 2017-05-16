@@ -16,6 +16,32 @@ export class P4Component implements OnInit {
         }, 2000);
     }
 
+    bindViewTap() {
+        $('.clickArea').css('display', 'none');
+        const arr = [$('.catStay'), $('.catMove1'), $('.catMove2'), $('.catMove3'), $('.catMove4')];
+        const delay = 200;
+        arr[0].removeClass('animated fadeInLeft');
+        setTimeout(() => {
+            $('.inBall').addClass('outBallAnimate');
+            $('.box').removeClass('animated fadeInRight');
+            setTimeout(() => {
+                $('.box').addClass('boxMoveOut');
+                setTimeout(() => {
+                    $('.title').addClass('animated fadeInLeft').css('opacity', 1);
+                }, 500);
+            }, 100);
+        }, delay);
+        for (let i = 0; i < arr.length - 1; i++) {
+            setTimeout(() => {
+                arr[i].css('opacity', 0);
+                arr[i + 1].css('opacity', 1);
+            }, i * delay);
+        }
+        setTimeout(() => {
+            this.router.navigateByUrl('/p5');
+        }, (arr.length) * delay * 3);
+    }
+
     ngOnInit() {
         $('html').off('click');
         $('*').removeClass('animated');
@@ -31,31 +57,7 @@ export class P4Component implements OnInit {
                 $('.inBall').addClass('inBallAnimate');
                 setTimeout(() => {
                     $('.catStay').addClass('animated fadeInLeft');
-                    $('html').on('click', () => {
-                        $('html').off('click');
-                        const arr = [$('.catStay'), $('.catMove1'), $('.catMove2'), $('.catMove3'), $('.catMove4')];
-                        const delay = 200;
-                        arr[0].removeClass('animated fadeInLeft');
-                        setTimeout(() => {
-                            $('.inBall').addClass('outBallAnimate');
-                            $('.box').removeClass('animated fadeInRight');
-                            setTimeout(() => {
-                                $('.box').addClass('boxMoveOut');
-                                setTimeout(() => {
-                                    $('.title').addClass('animated fadeInLeft').css('opacity', 1);
-                                }, 500);
-                            }, 100);
-                        }, delay);
-                        for (let i = 0; i < arr.length - 1; i++) {
-                            setTimeout(() => {
-                                arr[i].css('opacity', 0);
-                                arr[i + 1].css('opacity', 1);
-                            }, i * delay);
-                        }
-                        setTimeout(() => {
-                            this.router.navigateByUrl('/p5');
-                        }, (arr.length) * delay * 3);
-                    });
+                    $('.clickArea').css('display', 'block');
                 }, 300);
             }, 1000);
         }, 1300);
