@@ -19,7 +19,7 @@ export class P0Component implements OnInit {
         console.log(i);
         if (i >= images.length) {
           $('#loading').remove();
-          this.router.navigateByUrl('/p1');
+          this.router.navigateByUrl('/np1');
         }
       };
     }
